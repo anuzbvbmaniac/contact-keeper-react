@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "93351906-f060-4fde-9be7-15321f356b72",
+		"name": "Contact Keeper API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User & Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samreeta KC\",\r\n    \"email\": \"samreeta@gmail.com\",\r\n    \"password\": \"secretpassword\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User (User Two)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Samreeta KC\",\r\n    \"email\": \"samreeta@gmail.com\",\r\n    \"password\": \"secretpassword\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-gE35Z0XB1NI0gJVPor4EtgsVFQg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 17:42:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDM2MDYyNGU0MmYyZDcwMWQ3NzE4In0sImlhdCI6MTYyMDA2Mzc1MSwiZXhwIjoxNjIwNDIzNzUxfQ.6KGF246-19bmKFWSh53nm3Bt2Qv19xbzfbnccXehhr8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"anuzpandey@gmail.com\",\r\n    \"password\" : \"secretpassword\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"anuzpandey@gmail.com\",\r\n    \"password\" : \"secretpassword\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-y5QjyuFVZs1a19oqb4I2VkWPb0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 16:12:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Logged In User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Logged In User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-hkD6IYG2X8Fvaun4FpFfhsNcu4Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 16:13:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"60901a35c44259300ce0446f\",\n    \"name\": \"Anuz Pandey\",\n    \"email\": \"anuzpandey@gmail.com\",\n    \"date\": \"2021-05-03T15:43:49.769Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Get User's Contacts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User's Contacts (Anuz)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/contacts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"contacts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1011"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3f3-hTG5r7Ca1wVKqzDBRaRsKD15eyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 18:10:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"type\": \"personal\",\n        \"_id\": \"6090365d24e42f2d701d771a\",\n        \"name\": \"Anisha Wag;e\",\n        \"email\": \"anisha.wagle@gmail.com\",\n        \"phone\": \"01-444-5556-4568\",\n        \"user\": \"60901a35c44259300ce0446f\",\n        \"date\": \"2021-05-03T17:43:57.005Z\",\n        \"__v\": 0\n    },\n    {\n        \"type\": \"personal\",\n        \"_id\": \"6090364524e42f2d701d7719\",\n        \"name\": \"Anuz Pandey\",\n        \"email\": \"anuz@gmail.com\",\n        \"phone\": \"9860-330-364\",\n        \"user\": \"60901a35c44259300ce0446f\",\n        \"date\": \"2021-05-03T17:43:33.062Z\",\n        \"__v\": 0\n    },\n    {\n        \"type\": \"personal\",\n        \"_id\": \"609035de24e42f2d701d7717\",\n        \"name\": \"Koro Sensie\",\n        \"email\": \"koro@sensie.com\",\n        \"phone\": \"XXX-XXX-XXXX\",\n        \"user\": \"60901a35c44259300ce0446f\",\n        \"date\": \"2021-05-03T17:41:50.595Z\",\n        \"__v\": 0\n    },\n    {\n        \"type\": \"personal\",\n        \"_id\": \"609035c724e42f2d701d7716\",\n        \"name\": \"Obito Uchhiha\",\n        \"email\": \"obito@gmail.com\",\n        \"phone\": \"011-984-2566\",\n        \"user\": \"60901a35c44259300ce0446f\",\n        \"date\": \"2021-05-03T17:41:27.626Z\",\n        \"__v\": 0\n    },\n    {\n        \"type\": \"professional\",\n        \"_id\": \"6090355d24e42f2d701d7715\",\n        \"name\": \"Ace Itachi\",\n        \"email\": \"ace@itachi.com\",\n        \"phone\": \"9841-000-600\",\n        \"user\": \"60901a35c44259300ce0446f\",\n        \"date\": \"2021-05-03T17:39:41.890Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDM2MDYyNGU0MmYyZDcwMWQ3NzE4In0sImlhdCI6MTYyMDA2Mzc1MSwiZXhwIjoxNjIwNDIzNzUxfQ.6KGF246-19bmKFWSh53nm3Bt2Qv19xbzfbnccXehhr8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anuz Pandey\",\r\n    \"email\": \"anuz@gmail.com\",\r\n    \"phone\": \"9860-330-364\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Contact (Success)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ace Itachi\",\r\n    \"email\": \"ace@itachi.com\",\r\n    \"phone\": \"9841-000-600\",\r\n    \"type\": \"professional\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/contacts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"contacts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c8-nVRmmF0jansURwgh7WKV/SeZSD0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 17:39:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"professional\",\n    \"_id\": \"6090355d24e42f2d701d7715\",\n    \"name\": \"Ace Itachi\",\n    \"email\": \"ace@itachi.com\",\n    \"phone\": \"9841-000-600\",\n    \"user\": \"60901a35c44259300ce0446f\",\n    \"date\": \"2021-05-03T17:39:41.890Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Contact Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDM2MDYyNGU0MmYyZDcwMWQ3NzE4In0sImlhdCI6MTYyMDA2Mzc1MSwiZXhwIjoxNjIwNDIzNzUxfQ.6KGF246-19bmKFWSh53nm3Bt2Qv19xbzfbnccXehhr8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"anuzbvbmaniac@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/contacts/6090367524e42f2d701d771c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"6090367524e42f2d701d771c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Contact Details",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDM2MDYyNGU0MmYyZDcwMWQ3NzE4In0sImlhdCI6MTYyMDA2Mzc1MSwiZXhwIjoxNjIwNDIzNzUxfQ.6KGF246-19bmKFWSh53nm3Bt2Qv19xbzfbnccXehhr8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"anuzbvbmaniac123@gmail.com\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/contacts/6090367524e42f2d701d771c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"contacts",
+										"6090367524e42f2d701d771c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-XJidf9UPiuEaMnX1EJr4XrZD3LQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 18:03:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"personal\",\n    \"_id\": \"6090367524e42f2d701d771c\",\n    \"name\": \"Anuz Pandey\",\n    \"email\": \"anuzbvbmaniac123@gmail.com\",\n    \"phone\": \"9860-330-364\",\n    \"user\": \"6090360624e42f2d701d7718\",\n    \"date\": \"2021-05-03T17:44:21.555Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/contacts/6090355d24e42f2d701d7715",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"contacts",
+								"6090355d24e42f2d701d7715"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Contact",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5MDFhMzVjNDQyNTkzMDBjZTA0NDZmIn0sImlhdCI6MTYyMDA1ODM3MywiZXhwIjoxNjIwNDE4MzczfQ.hA0k-o0Hu5Dpni4_dJ-jIMyStdIlfFP8Qq69MfVWTsc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/contacts/6090355d24e42f2d701d7715",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"contacts",
+										"6090355d24e42f2d701d7715"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-LhLJ0Y/wucGM1D18fr0lBihGeXY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 May 2021 18:11:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Contact removed successfully.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix application",
-    "clientinstall": "npm install --prefix application",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "application": "npm start --prefix application",
+    "applicationinstall": "npm install --prefix application",
+    "dev": "concurrently \"npm run server\" \"npm run application\""
   },
   "keywords": [],
   "author": "",

@@ -9,12 +9,20 @@ const Contacts = () => {
 
     const { contacts, filtered } = contactContext;
 
-    if (contacts.length === 0) return <h4>Please add a contact.</h4>;
+    if (contacts.length === 0) return (
+        <div className="mt-5 md:mt-0">
+            <div className="shadow sm:rounded-md sm:overflow-hidden">
+                <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                    <h1>No Contacts found. Please add a contact.</h1>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <>
             <div className="mt-5 md:mt-0">
-                <ul className="grid grid-cols-2 gap-2">
+                <ul className="grid">
 
                     {filtered !== null
                         ? filtered.map((contact) => (

@@ -79,15 +79,14 @@ const Navbar = ({ title, icon }) => {
                                                         {profile.map((item) => (
                                                             <Menu.Item key={item}>
                                                                 {({ active }) => (
-                                                                    <a
-                                                                        href="#"
+                                                                    <Link
                                                                         className={classNames(
                                                                             active ? 'bg-gray-100' : '',
                                                                             'block px-4 py-2 text-sm text-gray-700'
                                                                         )}
                                                                     >
                                                                         {item}
-                                                                    </a>
+                                                                    </Link>
                                                                 )}
                                                             </Menu.Item>
                                                         ))}
@@ -118,18 +117,17 @@ const Navbar = ({ title, icon }) => {
                                 itemIdx === 0 ? (
                                     <Fragment key={item}>
                                         {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                                        <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
+                                        <Link className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
                                             {item}
-                                        </a>
+                                        </Link>
                                     </Fragment>
                                 ) : (
-                                    <a
+                                    <Link
                                         key={item}
-                                        href="#"
                                         className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                     >
                                         {item}
-                                    </a>
+                                    </Link>
                                 )
                             )}
                         </div>
@@ -153,13 +151,12 @@ const Navbar = ({ title, icon }) => {
                             </div>
                             <div className="mt-3 px-2 space-y-1">
                                 {profile.map((item) => (
-                                    <a
+                                    <Link
                                         key={item}
-                                        href="#"
                                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                                     >
                                         {item}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

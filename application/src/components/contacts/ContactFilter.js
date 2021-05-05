@@ -14,7 +14,7 @@ const ContactFilter = () => {
         if (filtered === null) {
             keywords.current.value = '';
         }
-    }, [contactContext]);
+    }, [contactContext, filtered]);
 
     const onChange = (event) => {
         if (keywords.current.value !== '') {

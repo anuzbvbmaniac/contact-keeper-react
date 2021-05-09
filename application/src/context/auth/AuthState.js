@@ -3,7 +3,7 @@ import axios from "axios";
 
 import authReducer from "./authReducer";
 import AuthContext from "./authContext";
-import { AUTH_ERROR, CLEAR_ERRORS, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from "../types";
+import { AUTH_ERROR, CLEAR_ERRORS, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from "../types";
 
 import setAuthToken from "../../utils/setAuthToken";
 
@@ -65,8 +65,28 @@ const AuthState = props => {
     }
 
     // Login User
-    const login = async () => {
+    const login = async (formData) => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
 
+        try {
+            const response = await axios.post('/api/auth', formData, config);
+
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: response.data
+            });
+
+            loadUser();
+        } catch (err) {
+            dispatch({
+                type: REGISTER_FAIL,
+                payload: err.response.data.msg
+            });
+        }
     }
 
     // Logout

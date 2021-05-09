@@ -1,7 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-const Login = () => {
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
+
+const Login = (props) => {
+
+    const authContext = useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated } = authContext;
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/');
+        }
+
+        if (error === 'Invalid email address. User not found.') {
+            setAlert(error, 'danger');
+            clearErrors();
+        }
+        //eslint-disable-next-line
+    }, [error, isAuthenticated, props.history]);
+
+
+
     const [user, setUser] = useState({
         email: '',
         password: '',
@@ -18,7 +42,14 @@ const Login = () => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log('Login Submitted');
+        if (email === '' || password === '') {
+            setAlert('Please fill in all fields.', 'danger');
+        } else {
+            login({
+                email,
+                password
+            });
+        }
     }
 
     return (
@@ -60,9 +91,10 @@ const Login = () => {
                                     id="password"
                                     name="password"
                                     type="password"
-                                    autoComplete="current-password"
                                     required
                                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    value={password}
+                                    onChange={onChange}
                                 />
                             </div>
                         </div>

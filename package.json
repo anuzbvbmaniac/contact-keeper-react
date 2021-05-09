@@ -9,7 +9,7 @@
     "application": "npm start --prefix application",
     "applicationinstall": "npm install --prefix application",
     "dev": "concurrently \"npm run server\" \"npm run application\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npom install --prefix application && npm run build --prefix application"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix application && npm run build --prefix application"
   },
   "keywords": [],
   "author": "",

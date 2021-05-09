@@ -1,4 +1,4 @@
-import { AUTH_ERROR, CLEAR_ERRORS, LOGIN_FAIL, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from '../types';
+import { AUTH_ERROR, CLEAR_ERRORS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from '../types';
 
 const authReducer = (state, action) => {
     switch (action.type) {
@@ -51,6 +51,16 @@ const authReducer = (state, action) => {
                 error: null,
             }
         case AUTH_ERROR:
+            localStorage.removeItem('token');
+            return {
+                ...state,
+                token: null,
+                isAuthenticated: false,
+                loading: false,
+                user: null,
+                error: action.payload
+            };
+        case LOGOUT:
             localStorage.removeItem('token');
             return {
                 ...state,

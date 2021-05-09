@@ -3,7 +3,7 @@ import axios from "axios";
 
 import authReducer from "./authReducer";
 import AuthContext from "./authContext";
-import { AUTH_ERROR, CLEAR_ERRORS, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from "../types";
+import { AUTH_ERROR, CLEAR_ERRORS, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, USER_LOADED } from "../types";
 
 import setAuthToken from "../../utils/setAuthToken";
 
@@ -91,7 +91,9 @@ const AuthState = props => {
 
     // Logout
     const logout = () => {
-
+        dispatch({
+            type: LOGOUT,
+        });
     }
 
     // Clear Errors

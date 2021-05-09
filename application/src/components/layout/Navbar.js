@@ -6,15 +6,19 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import AuthContext from "../../context/auth/authContext";
+import ContactContext from "../../context/contact/contactContext";
 
 const Navbar = () => {
 
     const authContext = useContext(AuthContext);
+    const contactContext = useContext(ContactContext);
 
     const { isAuthenticated, logout, user } = authContext;
+    const { clearContacts } = contactContext;
 
     const onLogout = () => {
         logout();
+        clearContacts();
     }
 
     const authLinks = (
@@ -28,7 +32,7 @@ const Navbar = () => {
                             <div>
                                 <Menu.Button className="max-w-xs flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
                                     <span className="sr-only">Open user menu</span>
-                                    <p>{user && user.name} <ChevronDownIcon className="w-5 h-5 float-right" /></p>
+                                    <p>{user && user.name} <ChevronDownIcon className="w-5 h-5 float-right"/></p>
                                 </Menu.Button>
                             </div>
                             <Transition
@@ -121,15 +125,14 @@ const Navbar = () => {
                             {isAuthenticated ? authLinks : guestLinks}
 
 
-
                             <div className="-mr-2 flex md:hidden">
                                 {/* Mobile menu button */}
                                 <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
-                                        <XIcon className="block h-6 w-6" aria-hidden="true" />
+                                        <XIcon className="block h-6 w-6" aria-hidden="true"/>
                                     ) : (
-                                        <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                                        <MenuIcon className="block h-6 w-6" aria-hidden="true"/>
                                     )}
                                 </Disclosure.Button>
                             </div>
@@ -167,7 +170,7 @@ const Navbar = () => {
                                 </div>
                                 <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                     <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                    <BellIcon className="h-6 w-6" aria-hidden="true"/>
                                 </button>
                             </div>
                             <div className="mt-3 px-2 space-y-1">

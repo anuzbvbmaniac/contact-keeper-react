@@ -30,7 +30,6 @@ const App = () => {
                             <Navbar/>
                             <main className={'bg-gray-50'}>
                                 <Alerts/>
-
                                 <Switch>
                                     <PrivateRoute exact path={'/'} component={Home}/>
                                     <Route exact path={'/about'} component={About}/>

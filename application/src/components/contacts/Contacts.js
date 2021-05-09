@@ -1,15 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import ContactContext from '../../context/contact/contactContext';
 import ContactItem from "./ContactItem";
+import Spinner from "../layout/Spinner";
 
 const Contacts = () => {
 
     const contactContext = useContext(ContactContext);
 
-    const { contacts, filtered } = contactContext;
+    const { contacts, filtered, getContacts, loading } = contactContext;
 
-    if (contacts.length === 0) return (
+    useEffect(() => {
+        getContacts();
+        // eslint-disable-next-line
+    }, []);
+
+    if (contacts !== null && contacts.length === 0 && !loading) return (
         <div className="mt-5 md:mt-0">
             <div className="shadow sm:rounded-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
@@ -21,20 +27,20 @@ const Contacts = () => {
 
     return (
         <>
-            <div className="mt-5 md:mt-0">
-                <ul className="grid">
-
-                    {filtered !== null
-                        ? filtered.map((contact) => (
-                            <ContactItem contact={contact} key={contact.id}/>
-                        ))
-                        : contacts.map((contact) => (
-                            <ContactItem contact={contact} key={contact.id}/>
-                        ))
-                    }
-
-                </ul>
-            </div>
+            {contacts !== null && !loading ? (
+                <div className="mt-5 md:mt-0">
+                    <ul className="grid">
+                        {filtered !== null
+                            ? filtered.map((contact) => (
+                                <ContactItem contact={contact} key={contact._id}/>
+                            ))
+                            : contacts.map((contact) => (
+                                <ContactItem contact={contact} key={contact._id}/>
+                            ))
+                        }
+                    </ul>
+                </div>
+            ) : <Spinner/>}
         </>
     );
 };

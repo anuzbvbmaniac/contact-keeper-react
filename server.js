@@ -20,7 +20,6 @@ app.use('/api/contacts', require('./routes/contacts'));
 if (process.env.NODE_ENV === 'production') {
     // set static folder
     app.use(express.static('application/build'));
-
     app.get('*', (request, response) => response.sendFile(path.resolve(__dirname, 'application', 'build', 'index.html')))
 }
 

@@ -56,7 +56,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-8 flex-col justify-center">
+        <div className="min-h-screen bg-gray-50 py-8 flex-col justify-center px-4">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <h2 className="mt-0 text-center text-3xl font-extrabold text-gray-900">Sign up</h2>
                 <p className="mt-2 font-medium text-indigo-600 hover:text-indigo-500 text-center text-sm">

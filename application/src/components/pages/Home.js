@@ -13,8 +13,8 @@ const Home = () => {
     }, []);
 
     return (
-        <div className={'max-w-7xl mx-auto py-12 sm:px-6 lg:px-8'}>
-            <div className={'grid grid-cols-2 gap-6'}>
+        <div className={'lg:max-w-7xl md:w-full mx-auto lg:py-12 md:px-6 md:px-8 px-4 pt-6'}>
+            <div className={'grid lg:grid-cols-2 md:gap-6 md:grid-cols-1 md:gap-0 lg:p-0 sm:px-4'}>
                 <ContactForm/>
                 <Contacts/>
             </div>
